@@ -1,9 +1,3 @@
-@font-face {
-  font-family: Ubuntu;
-  src: url(Ubuntu-R.ttf);
-}
-
-
 h1, h2, h3, h4, h5, h6 {
   font-weight: bold;
 }
@@ -92,7 +86,7 @@ a[href] {
 
 #article {
   text-rendering: optimizeLegibility;
-  font-family: Ubuntu, "Georgia", "Times New Roman";
+  font-family: "Ubuntu";
   user-select: unset;
 }
 
