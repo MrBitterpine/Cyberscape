@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="">
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="../styles/main.css">
+    <link rel="stylesheet" href="../styles/article.css">
+    <script src="../scripts/showdown.min.js"></script>
+    <title>CyberScape</title>
+  </head>
+  <body>
+    <div class="padding">
+    <div class="content" id="content"></div>
+      </div>
+    <script>
+    article = location.toString().split('?article=');
+            if (typeof article[1] !== 'undefined') {
+                mdFile = "blog/" + article[1] + ".md"
+                document.title = article[1];
+            } else {
+                mdFile = "blog/ERROR.md"
+                document.title = "ERROR";
+            }
+      var request = new XMLHttpRequest();
+        request.open("GET", mdFile, false);
+      request.send(null);
+        var text = request.responseText;
+      
+    var converter = new showdown.Converter();
+    var html      = converter.makeHtml(text);
+      document.getElementById("content").innerHTML = html;
+    </script>
+  </body>
+</html>
